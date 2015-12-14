@@ -1,0 +1,11 @@
+<h4>Create your account</h4>
+  <%= render 'shared/form_errors' %>
+  <form class='form' method='post' action='/users'>
+    <%= render 'users/user_inputs' %>
+    <div class='form-group'>
+      <label for='password_confirmation'>Password Confirmation:</label>
+      <input id='password_confirmation' name='user[password_confirmation]' type='password' value='' />
+    </div>
+    <input class='button-primary' type='submit' value='Sign Up' />
+  </form>
+</div>
