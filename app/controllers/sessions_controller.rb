@@ -8,16 +8,16 @@ class SessionsController < ApplicationController
 
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
-      redirect_to root_path
+      redirect_to '/'
     else
       @errors = ['Invalid username/password combination.']
       render 'new'
     end
   end
 
-    def destroy
+  def destroy
     session.clear
-    redirect_to root_path
+    redirect_to '/'
   end
 
 end
