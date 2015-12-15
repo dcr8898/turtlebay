@@ -1,5 +1,5 @@
 <% if logged_in? %>
-  <a href=<%= "/users/#{current_user.id}" %>><%= current_user.username %></a> | <a href="/">home</a> | <a href="/logout">logout</a>
+  <%= link_to current_user.username, user_path(current_user.id) %> | <%= link_to 'home', '/' %> | <%= link_to 'logout', logout_path, method: :delete %>
 <% else %>
-  <a href="/">home</a> | <a href="/registration">sign up</a> | <a href="/login">log in</a>
+  <%= link_to 'home', '/' %> | <%= link to 'sign up', register_path %> | <%= link_to 'log in', login_path%>>
 <% end %>
