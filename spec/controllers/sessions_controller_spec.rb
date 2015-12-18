@@ -26,7 +26,7 @@ describe SessionsController do
       end
 
       xit "redirects to the user's show route" do
-        subject.should redirect_to user
+        expect(subject).to redirect_to user
       end
     end
 
@@ -39,7 +39,7 @@ describe SessionsController do
       end
 
       it "renders the new template" do
-        subject.should render_template("new")
+        expect(subject).to render_template("new")
       end
 
       xit "assigns flash message" do
