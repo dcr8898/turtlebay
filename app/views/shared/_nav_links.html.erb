@@ -1,0 +1,5 @@
+<% if logged_in? %>
+  <%= link_to current_user.username, "/users/#{current_user.id}" %> | <%= link_to 'home', '/' %> | <%= link_to 'logout', logout_path, method: :delete %>
+<% else %>
+  <%= link_to 'home', '/' %> | <%= link_to 'sign up', register_path %> | <%= link_to 'log in', login_path%>
+<% end %>
