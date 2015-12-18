@@ -10,13 +10,13 @@ RSpec.describe Bid, type: :model do
   end
 
   context "associations" do
-    it { should belong_to(:bidder).class_name('User') }
-    it { should belong_to :item }
+    it { expect(subject).to belong_to(:bidder).class_name('User') }
+    it { expect(subject).to belong_to :item }
   end
 
   context "validations" do
 
-    xit { should validate_presence_of :amount }
+    xit { expect(subject).to validate_presence_of :amount }
 
     it "should be invalid with a lower bid" do
       expect(@lower_bid).to be_invalid

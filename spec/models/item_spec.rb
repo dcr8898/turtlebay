@@ -3,15 +3,15 @@ require 'rails_helper'
 RSpec.describe Item, type: :model do
 
   context "validations" do
-    it { should validate_presence_of :title }
-    it { should validate_presence_of :start_time }
-    it { should validate_presence_of :end_time }
+    it { expect(subject).to validate_presence_of :title }
+    it { expect(subject).to validate_presence_of :start_time }
+    it { expect(subject).to validate_presence_of :end_time }
   end
 
   context "associations" do
-    it { should belong_to(:seller).class_name('User') }
-    it { should belong_to(:buyer).class_name('User') }
-    it { should have_many :bids }
+    it { expect(subject).to belong_to(:seller).class_name('User') }
+    it { expect(subject).to belong_to(:buyer).class_name('User') }
+    it { expect(subject).to have_many :bids }
   end
 
 end
